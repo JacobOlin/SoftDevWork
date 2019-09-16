@@ -1,3 +1,4 @@
+import random
 masterlist = """Job Class,Percentage
 Management,6.1
 Business and Financial operations,5
@@ -36,7 +37,7 @@ def makeDictionary():
             prevLine = i + 1
         i += 1
     listOfLines.append(masterlist[prevLine:len(masterlist)])
-    i = 0
+    i = 1
     while i < len(listOfLines):
         j = 0
         key = ""
@@ -55,4 +56,14 @@ def makeDictionary():
 
 makeDictionary()
 
+def returnRandomJob():
+    numb = 100 * random.random()
+    index = 0.0
+    for keys in dict:
+        if numb < index + float(dict[keys]):
+            return (keys)
+        else:
+            index += float(dict[keys])
 
+#print (returnRandomJob())
+        
