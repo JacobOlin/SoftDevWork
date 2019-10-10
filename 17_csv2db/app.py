@@ -7,16 +7,17 @@ import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O
 
 
-DB_FILE="discobandit.db"
+DB_FILE="thedatabase.db"
 
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops
-
+#
 #==========================================================
 
 # < < < INSERT YOUR POPULATE-THE-DB CODE HERE > > >
 doneHeader = False
 file = open("static/courses.csv",'r')
+#c.execute("DROP TABLE courses")
 for line in file:
     i = 0
     if line[i] != ',':
@@ -28,9 +29,10 @@ for line in file:
         i += 1
     word2 = line[last:i]
     word3 = line[i+1:len(line)]
-    if (!doneHeader):
+    if doneHeader == False:
         command = "CREATE TABLE courses (word1 TEXT, word2 INTEGER, word3 INTEGER)"
         c.execute(command)
+        doneHeader = True
     else:
         command = "INSERT INTO courses VALUES (word1 TEXT, word2 INTEGER, word3 INTEGER)"
         c.execute(command)
