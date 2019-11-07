@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment 22</title>
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css">
+
+  <!-- Compressed JavaScript -->
+  <!--script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"></script-->
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text"></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout large primary">
+    <div class="row column text-center">
+      <h1>A Guide to Using Foundation</h1>
+      <h2 class="subheader">By Jacob Olin and Hannah Fried</h2>
+    </div>
+  </div>
+
+  <div class="row medium-8 large-7 columns">
+    <h3>This webpage will act as a tutorial to try to best represent some of the coolest things that can be done with Foundation.  <br /><br /></h3>
+  </div>
+
+  <h4>Forms</h4>
+
+    <!--  begin blog post -->
+  <!--  <div class="blog-post">
+      <h3>Awesome blog post title <small>3/6/2015</small></h3>
+      <img class="thumbnail" src="https://placehold.it/850x350">
+      <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum
+        faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+      <div class="callout">
+        <ul class="menu simple">
+          <li><a href="#">Author: Mike Mikers</a></li>
+          <li><a href="#">Comments: 3</a></li>
+        </ul>
+      </div>
+    </div>
+    <!  end blog post ---->
+    <p>The first thing we can look at are two basic types of form inputs: the radio input and the checkbox input.<br /></p>
+    <p> We can create these inputs simply by creating a form, and giving the input attribute type = "radio" or type = "checkbox"</p>
+
+    <form>
+      <div class= "grid-x grid-padding-x">
+        <div class="large-6 medium-6 cell">
+          <label>Choose Your Favorite</label>
+          <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+        </div>
+        <div class="large-6 medium-6 cell">
+          <label>Check these out</label>
+          <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+          <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+        </div>
+      </div>
+    </form>
+
+    <p>The other interesting thing to note is how it is easy to allign the two sets of buttons horizontally</p>
+    <p>To do this, you can simply make a div with attribute class="grid-x grid-padding-x", and this will make it so that <br /> anything you put inside the div will be put next to each other horizontally where there is room.</p>
+    <!--  added a form above -->
+
+    <h4><br /><br /> Buttons</h4>
+    <p>Buttons are really nice to format. It comes with a bunch of preset classes for buttons including "success button", "alert button", and "secondary button".</p>
+    <p>To have your buttons send you somewhere, it is the standard 'href=___'.</p>
+    <h5>Try one of these buttons:</h5>
+    <p><a href="https://google.com" class="button">Google Button</a><br />
+      <a href="#" class="success button">Success Btn</a><br />
+      <a href="#" class="alert button">Alert Btn</a><br />
+      <a href="#" class="secondary button">Secondary Btn</a></p>
+    <!--  some buttons above to experiment with -->
+
+    <h4><br /><br /> Sliders</h4>
+    <p>Foundation has a lot of ways to input data, including the slider. The slider allows for an easy transition between values. Try this one below:</p>
+
+    <div class="grid-x grid-margin-x">
+      <div class="cell small-10">
+        <div class="slider" data-slider data-initial-start="50" data-step="5">
+          <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+          <span class="slider-fill" data-slider-fill></span>
+        </div>
+      </div>
+      <div class="cell small-2">
+        <input type="number" id="sliderOutput2">
+      </div>
+    </div>
+
+
+    <div class="callout">
+      <h5>You've reached the end of this tutorial!</h5>
+      <p>Thanks for checking out our website! Feel free to look through our source code to see how to do anything we didn't specifically mention.</p>
+      <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
+    </div>
+    <!--  I added a button linking to an external source above  -->
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+
+</html>
