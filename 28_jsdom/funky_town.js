@@ -32,5 +32,24 @@ var randomStudent = function(a){
     return a[rand - 1];
 }
 
-var fact0 = document.getElementById("fact")
-fact0.addEventListener('click',function(){fact(10)})
+var executeFib = function(){
+  var answer = fib(7)
+  console.log(answer)
+}
+
+var executeGcd = function(){
+  var answer = gcd(144,188)
+  console.log(answer)
+}
+
+var executeName = function(){
+  var answer = randomStudent(studentlist)
+  console.log(answer)
+}
+
+var fib0 = document.getElementById("fib")
+fib0.addEventListener('click',executeFib)
+var gcd0 = document.getElementById("gcd")
+gcd0.addEventListener('click',executeGcd)
+var name0 = document.getElementById("name")
+name0.addEventListener('click',executeName)
