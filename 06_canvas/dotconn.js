@@ -1,3 +1,8 @@
+//Jacob Olin
+//SoftDev1 pd2
+//KK #06: Dot Dot Dot
+//2020-02-12
+
 var c = document.getElementById("clear");
 var d = document.getElementById("slate");
 var ctx = d.getContext("2d");
