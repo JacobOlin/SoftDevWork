@@ -1,10 +1,10 @@
 //Jacob Olin
 //SoftDev1 pd2
-//K #07: They lock us in the tower whenever we get caught ...which is often
-//2020-02-13
+//K08: What is it saving the screen from?
+//2020-02-14
 
-var c = document.getElementById("start");
-var d = document.getElementById("stop");
+var c = document.getElementById("circle");
+var end = document.getElementById("stop");
 var can = document.getElementById("slate");
 var ctx = can.getContext("2d");
 var radius = 0;
@@ -23,11 +23,10 @@ var anim = function(e) {
   ctx.fillStyle = "#1FBED6";
   ctx.fill();
   radius += 1*inc
-  if (!((radius < 250 && inc == 1) ||(radius > 0 && inc == -1))){   //checks if circle can keep expanding/contracting
-    inc *= -1;
+  if (!((radius < 250 && inc == 1) || (radius > 0 && inc == -1))){   //checks if circle can keep expanding/contracting
+      inc *= -1;
   }
   id = window.requestAnimationFrame(anim); //continuously stores new frame's id
-
 }
 
 var start_anim = function(e){
@@ -43,4 +42,4 @@ var stop = function(e) {
     window.cancelAnimationFrame(id);  //stops the animation
     running = false;
 }
-d.addEventListener("click", stop);
+end.addEventListener("click", stop);
