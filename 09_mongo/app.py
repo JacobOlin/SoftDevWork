@@ -14,4 +14,9 @@ file.close()
 
 restaurant.insert_many(data)
 
-print (restaurant.find({"address.building" : "425"}))
+#print (restaurant.find({"address.building" : "425"}))
+
+def borough(name):
+    return restaurant for restaurant in restaurants.find({"borough": f"{borough}"})
+
+print (borough("bronx"))
