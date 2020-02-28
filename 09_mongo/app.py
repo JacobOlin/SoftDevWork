@@ -1,31 +1,28 @@
-import pymongo
 from pymongo import MongoClient
-from bson.json_util import loads
+import json
 
-client = MongoClient('localhost',27017)
+client = MongoClient()
 db=client.buildings
 restaurant = db.restaurant
 
-file = open("primer-dataset.json", 'r')
-data = file.readlines()
-data = list(map(lambda doc: loads(doc.strip()), data))
-file.close()
+rawdata = open('primer-dataset.json').read()
+data = json.loads(rawdata)
+restaurant.insert_many(data)
 #print(data)
 
-restaurant.insert_many(data)
 
 #print (restaurant.find({"address.building" : "425"}))
 
 def borough(name):
-    return restaurant.find({"borough": f"{name}"})
+    return list(restaurant.find({"borough": name}))
 
 def zipcode(number):
-    return restaurant.find({"zipcode": f"{name}"})
+    return list(restaurant.find({"zipcode": name}))
 
 def zipcode_grade(zipcode, grade):
-    return restaurant.find({"zipcode": f"{zipcode}", "grades.grade": grade})
+    return list(restaurant.find({"zipcode": zipcode, "grades.grade": grade}))
 
 def zipcode_score(zipcode, score):
-    return restaurant.find({"zipcode": f"{zipcode}", "grades.score": {$lt: score}})
+    return list(restaurant.find({"zipcode": zipcode, "grades.score": {$lt: score}}))
 
 print (borough("bronx"))
