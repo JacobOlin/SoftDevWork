@@ -4,10 +4,14 @@ import json
 client = MongoClient()
 db=client.buildings
 restaurant = db.restaurant
+restaurant.delete_many({})
 
-rawdata = open('primer-dataset.json').read()
-data = json.loads(rawdata)
-restaurant.insert_many(data)
+
+with open("primer-dataset.json", 'r') as file:
+    data = json.load(file)
+    for item in data:
+        restaurant.insert_one(loads(json.dumps(item)))
+
 #print(data)
 
 
