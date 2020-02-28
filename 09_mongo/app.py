@@ -17,12 +17,12 @@ def borough(name):
     return list(restaurant.find({"borough": name}))
 
 def zipcode(number):
-    return list(restaurant.find({"zipcode": name}))
+    return list(restaurant.find({"address.zipcode": name}))
 
 def zipcode_grade(zipcode, grade):
-    return list(restaurant.find({"zipcode": zipcode, "grades.grade": grade}))
+    return list(restaurant.find({"address.zipcode": zipcode, "grades.0.grade": grade}))
 
 def zipcode_score(zipcode, score):
-    return list(restaurant.find({"zipcode": zipcode, "grades.score": {$lt: score}}))
+    return list(restaurant.find({"address.zipcode": zipcode, "grades.0.score": {"$lt": score}}))
 
 print (borough("bronx"))
