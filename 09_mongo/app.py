@@ -10,6 +10,6 @@ data = file.readlines()
 file.close()
 #print(data)
 
-restaurant.inster_many(documents)
+restaurant.inster_many(data)
 
 print (restaurant.find({"address.building" : "764"}))
