@@ -17,6 +17,15 @@ restaurant.insert_many(data)
 #print (restaurant.find({"address.building" : "425"}))
 
 def borough(name):
-    return restaurant for restaurant in restaurants.find({"borough": f"{borough}"})
+    return restaurant.find({"borough": f"{name}"})
+
+def zipcode(number):
+    return restaurant.find({"zipcode": f"{name}"})
+
+def zipcode_grade(zipcode, grade):
+    return restaurant.find({"zipcode": f"{zipcode}", "grades.grade": grade})
+
+def zipcode_score(zipcode, score):
+    return restaurant.find({"zipcode": f"{zipcode}", "grades.score": {$lt: score}})
 
 print (borough("bronx"))
