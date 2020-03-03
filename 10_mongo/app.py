@@ -9,12 +9,13 @@ from pprint import pprint
 import datetime
 import json
 
-client = MongoClient("mongodb://admin:thuang@64.225.14.222/")
+client = MongoClient()
 db = client.stickySulphur
 col = db.senators
 
 def findParty(party):
         for senator in col.find({"party": party}):
-                print(col["name"])
+               print(senator)
 
+#findParty("Independent")
 findParty("Republican")

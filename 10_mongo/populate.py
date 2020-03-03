@@ -8,7 +8,7 @@ client = MongoClient()
 db = client.stickySulphur
 col = db.senators
 
-with open("./role.json", 'r') as file:
+with open("senators.json", 'r') as file:
     data = json.load(file)
     #print(data['objects'][0])
     for member in data['objects']:
