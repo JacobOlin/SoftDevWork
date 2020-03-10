@@ -15,8 +15,11 @@
   {% for dict in dictList %}
     <tr>
     {% for key, value in dict.items() %}
-      <!-- <td>{{ value }}</td> -->
+    {% if value[0,7] is 'http://'%}
       <td> <img src = {{value}}></img></td>
+    {% else %}
+      <td>{{ value }}</td>
+    {% endif %}
     {% endfor %}
     </tr>
   {% endfor %}
