@@ -50,6 +50,7 @@ def results():
         dict['height'] = element['height']
         dict['weight'] = element['weight']
         dict['weaknesses'] = element['weaknesses']
+        dict['img'] = element['img']
         dictList.append(dict)
 
     return render_template("results.html", title = title, dictList = dictList)
