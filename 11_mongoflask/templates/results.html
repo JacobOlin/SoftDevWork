@@ -15,7 +15,7 @@
   {% for dict in dictList %}
     <tr>
     {% for key, value in dict.items() %}
-      {% if key == "image" %}
+      {% if key == "img" %}
         <td> <img src = {{value}}></img></td>
       {% else %}
         <<td>{{ value }}</td>
