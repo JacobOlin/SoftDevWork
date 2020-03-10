@@ -5,21 +5,20 @@
   <thead><tr>
     <th scope="col">Number</th>
     <th scope="col">Name</th>
+    <th scope="col">Image</th>
     <th scope="col">Type(s)</th>
     <th scope="col">Height</th>
     <th scope="col">Weight</th>
     <th scope="col">Type weaknesses</th>
-    <th scope="col">Image</th>
   </tr></thead>
   <tbody>
   {% for dict in dictList %}
     <tr>
     {% for key, value in dict.items() %}
-    {% if value[0,7] is 'http://'%}
       <td> <img src = {{value}}></img></td>
-    {% else %}
-      <td>{{ value }}</td>
-    {% endif %}
+
+      <!-- <td>{{ value }}</td> -->
+
     {% endfor %}
     </tr>
   {% endfor %}

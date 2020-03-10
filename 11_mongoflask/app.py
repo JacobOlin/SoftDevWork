@@ -46,11 +46,11 @@ def results():
         dict = {} #only "necessary" data in here!
         dict['number'] = element['num']
         dict['name'] = element['name']
+        dict['img'] = element['img']
         dict['types'] = element['type']
         dict['height'] = element['height']
         dict['weight'] = element['weight']
         dict['weaknesses'] = element['weaknesses']
-        dict['img'] = element['img']
         dictList.append(dict)
 
     return render_template("results.html", title = title, dictList = dictList)
