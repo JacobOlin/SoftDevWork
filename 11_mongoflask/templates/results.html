@@ -15,10 +15,11 @@
   {% for dict in dictList %}
     <tr>
     {% for key, value in dict.items() %}
-      <td> <img src = {{value}}></img></td>
-
-      <!-- <td>{{ value }}</td> -->
-
+      {% if key is 'image' %}
+        <td> <img src = {{value}}></img></td>
+      {% else %}
+        <<td>{{ value }}</td>
+      {% endif %}
     {% endfor %}
     </tr>
   {% endfor %}
