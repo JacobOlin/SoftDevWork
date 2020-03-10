@@ -15,7 +15,8 @@
   {% for dict in dictList %}
     <tr>
     {% for key, value in dict.items() %}
-      <td>{{ value }}</td>
+      <!-- <td>{{ value }}</td> -->
+      <td> <img src = {{value}}></img></td>
     {% endfor %}
     </tr>
   {% endfor %}
