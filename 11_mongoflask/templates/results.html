@@ -16,7 +16,7 @@
     <tr>
     {% for key, value in dict.items() %}
       {% if key == "img" %}
-        <td> <img src = {{value}}></img></td>
+        <td> <img src = {{value}} height = "50" width = "50"></img></td>
       {% else %}
         <td>{{ value }}</td>
       {% endif %}
